@@ -1,8 +1,8 @@
 const axios = require("axios");
 
-const mahmud = async () => {
+const ASK = async () => {
         const base = await axios.get("https://raw.githubusercontent.com/mahmudx7/HINATA/main/baseApiUrl.json");
-        return base.data.mahmud;
+        return base.data.ASK;
 };
 
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
                 name: "4k",
                 aliases: ["hd", "upscale"],
                 version: "1.7",
-                author: "MahMUD",
+                author: "ASK",
                 countDown: 10,
                 role: 0,
                 description: {
@@ -31,13 +31,13 @@ module.exports = {
                         noImage: "• বেবি, একটি ছবিতে রিপ্লাই দাও অথবা ছবির লিংক দাও! 😘",
                         wait: "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 😘",
                         success: "✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲",
-                        error: "× সমস্যা হয়েছে: %1। প্রয়োজনে Contact MahMUD।"
+                        error: "× সমস্যা হয়েছে: %1। প্রয়োজনে Contact ASK।"
                 },
                 en: {
                         noImage: "• Baby, please reply to an image or provide a link! 😘",
                         wait: "𝐋𝐨𝐚𝐝𝐢𝐧𝐠 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞...𝐰𝐚𝐢𝐭 𝐛𝐚𝐛𝐲 😘",
                         success: "✅ | 𝐇𝐞𝐫𝐞'𝐬 𝐲𝐨𝐮𝐫 𝟒𝐤 𝐢𝐦𝐚𝐠𝐞 𝐛𝐚𝐛𝐲",
-                        error: "× API error: %1. Contact MahMUD for help."
+                        error: "× API error: %1. Contact ASK for help."
                 },
                 vi: {
                         noImage: "• Cưng ơi, hãy phản hồi một bức ảnh hoặc gửi link! 😘",
@@ -66,7 +66,7 @@ module.exports = {
                 api.setMessageReaction("😘", event.messageID, () => {}, true);
 
                 try {
-                        const baseUrl = await mahmud();
+                        const baseUrl = await ASK();
                         const apiUrl = `${baseUrl}/api/hd/mahmud?imgUrl=${encodeURIComponent(imgUrl)}`;
                         
                         const res = await axios.get(apiUrl, { responseType: "stream" });
